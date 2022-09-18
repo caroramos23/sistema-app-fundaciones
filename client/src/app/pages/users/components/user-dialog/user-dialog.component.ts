@@ -105,6 +105,7 @@ export class UserDialogComponent implements OnInit, OnDestroy {
         apellidos: this.data?.user.apellidos,
         username: this.data?.user.username
       });
+      //No se puede editar el username
       this.userForm.get("username")?.disable();
 
       // eliminar las validaciones del password

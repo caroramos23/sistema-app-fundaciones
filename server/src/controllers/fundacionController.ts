@@ -9,7 +9,7 @@ import jwt from 'jsonwebtoken';
 class FundacionController {
 
     /**
-     * @description Lista los usuarios disponibles
+     * @description Lista las fundaciones disponibles del usuario logueado
      * @param req 
      * @param res 
      * @returns Promise<Response<any, Record<string, any>> | undefined>
