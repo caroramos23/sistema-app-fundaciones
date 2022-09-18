@@ -7,7 +7,7 @@ import dao from "../dao/registroDAO";
 class RegistroController {
 
     /**
-     * @description Lista los roles disponibles
+     * @description Lista los "registradores" (usuarios) disponibles
      * @param req 
      * @param res 
      * @returns Promise<Response<any, Record<string, any>> | undefined>
