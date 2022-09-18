@@ -1,0 +1,59 @@
+<h1 style="margin: 12px;">Fundaciones</h1>
+
+<div align="right">
+    <button mat-flat-button color="primary" (click)="onOpenModal()">
+        <mat-icon>add</mat-icon>
+        Agregar
+    </button>
+</div>
+
+<div class="table-content mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- nombre Column -->
+        <ng-container matColumnDef="nombreFundacion">
+          <th mat-header-cell *matHeaderCellDef> Nombre de Fundación</th>
+          <td mat-cell *matCellDef="let element"> {{element.nombreFundacion}} </td>
+        </ng-container>
+      
+        <!-- descripcion Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef> Descripción </th>
+          <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        </ng-container>
+      
+        <!-- tipo Column -->
+        <ng-container matColumnDef="tipoFundacion">
+          <th mat-header-cell *matHeaderCellDef> Tipo de Fundación </th>
+          <td mat-cell *matCellDef="let element"> {{element.tipoFundacion}} </td>
+        </ng-container>
+      
+        <!-- fecha Column -->
+        <ng-container matColumnDef="fechaFundacion">
+          <th mat-header-cell *matHeaderCellDef> Fecha Fundación </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaFundacion}} </td>
+        </ng-container>
+
+        <!-- actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-flat-button color="accent" (click)="onOpenModal(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-flat-button color="warn" (click)="onDelete(element.cveFundacion)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+</div> 
